@@ -1,0 +1,222 @@
+[
+  {
+    "id": 1,
+    "flightName": "IndiGo 6E-123",
+    "from": "DEL",
+    "to": "BOM",
+    "price": 4500,
+    "duration": "2h 10m",
+    "departureTime": "08:00 AM",
+    "arrivalTime": "10:10 AM",
+    "logo": "/src/assets/indigo.png"
+  },
+  {
+    "id": 2,
+    "flightName": "Air India AI-201",
+    "from": "BLR",
+    "to": "CCU",
+    "price": 5500,
+    "duration": "2h 30m",
+    "departureTime": "11:00 AM",
+    "arrivalTime": "01:30 PM",
+    "logo": "/src/assets/aindia.jpg"
+  },
+  {
+    "id": 3,
+    "flightName": "SpiceJet SG-302",
+    "from": "HYD",
+    "to": "MAA",
+    "price": 4200,
+    "duration": "1h 20m",
+    "departureTime": "02:00 PM",
+    "arrivalTime": "03:20 PM",
+    "logo": "/src/assets/spicejet.png"
+  },
+  {
+    "id": 4,
+    "flightName": "GoAir G8-403",
+    "from": "DEL",
+    "to": "GOI",
+    "price": 4700,
+    "duration": "2h 40m",
+    "departureTime": "06:00 PM",
+    "arrivalTime": "08:40 PM",
+    "logo": "/src/assets/goair.svg"
+  },
+  {
+    "id": 5,
+    "flightName": "Vistara UK-507",
+    "from": "BOM",
+    "to": "BLR",
+    "price": 5300,
+    "duration": "1h 45m",
+    "departureTime": "09:00 AM",
+    "arrivalTime": "10:45 AM",
+    "logo": "/src/assets/vistara.jpg"
+  },
+  {
+    "id": 6,
+    "flightName": "IndiGo 6E-789",
+    "from": "CCU",
+    "to": "PNQ",
+    "price": 4900,
+    "duration": "2h 50m",
+    "departureTime": "03:00 PM",
+    "arrivalTime": "05:50 PM",
+    "logo": "/src/assets/indigo.png"
+  },
+  {
+    "id": 7,
+    "flightName": "Air India AI-315",
+    "from": "GOI",
+    "to": "DEL",
+    "price": 4600,
+    "duration": "2h 30m",
+    "departureTime": "07:00 AM",
+    "arrivalTime": "09:30 AM",
+    "logo": "/src/assets/aindia.jpg"
+  },
+  {
+    "id": 8,
+    "flightName": "SpiceJet SG-610",
+    "from": "MAA",
+    "to": "HYD",
+    "price": 4300,
+    "duration": "1h 10m",
+    "departureTime": "05:00 PM",
+    "arrivalTime": "06:10 PM",
+    "logo": "/src/assets/spicejet.png"
+  },
+  {
+    "id": 9,
+    "flightName": "GoAir G8-205",
+    "from": "BLR",
+    "to": "JAI",
+    "price": 5000,
+    "duration": "2h 15m",
+    "departureTime": "10:00 AM",
+    "arrivalTime": "12:15 PM",
+    "logo": "/src/assets/goair.svg"
+  },
+  {
+    "id": 10,
+    "flightName": "Vistara UK-820",
+    "from": "PNQ",
+    "to": "BOM",
+    "price": 5200,
+    "duration": "1h 10m",
+    "departureTime": "04:00 PM",
+    "arrivalTime": "05:10 PM",
+    "logo": "/src/assets/vistara.jpg"
+  },
+  {
+    "id": 11,
+    "flightName": "IndiGo 6E-221",
+    "from": "DEL",
+    "to": "HYD",
+    "price": 4800,
+    "duration": "2h 00m",
+    "departureTime": "07:00 PM",
+    "arrivalTime": "09:00 PM",
+    "logo": "/src/assets/indigo.png"
+  },
+  {
+    "id": 12,
+    "flightName": "Air India AI-401",
+    "from": "BLR",
+    "to": "BOM",
+    "price": 5300,
+    "duration": "1h 40m",
+    "departureTime": "05:00 PM",
+    "arrivalTime": "06:40 PM",
+    "logo": "/src/assets/aindia.jpg"
+  },
+  {
+    "id": 13,
+    "flightName": "SpiceJet SG-703",
+    "from": "MAA",
+    "to": "CCU",
+    "price": 4700,
+    "duration": "2h 20m",
+    "departureTime": "12:00 PM",
+    "arrivalTime": "02:20 PM",
+    "logo": "/src/assets/spicejet.png"
+  },
+  {
+    "id": 14,
+    "flightName": "GoAir G8-904",
+    "from": "DEL",
+    "to": "BLR",
+    "price": 5400,
+    "duration": "2h 30m",
+    "departureTime": "09:00 AM",
+    "arrivalTime": "11:30 AM",
+    "logo": "/src/assets/goair.svg"
+  },
+  {
+    "id": 15,
+    "flightName": "Vistara UK-501",
+    "from": "BOM",
+    "to": "DEL",
+    "price": 5100,
+    "duration": "2h 20m",
+    "departureTime": "03:00 PM",
+    "arrivalTime": "05:20 PM",
+    "logo": "/src/assets/vistara.jpg"
+  },
+  {
+    "id": 16,
+    "flightName": "IndiGo 6E-545",
+    "from": "CCU",
+    "to": "BLR",
+    "price": 5200,
+    "duration": "2h 15m",
+    "departureTime": "06:00 AM",
+    "arrivalTime": "08:15 AM",
+    "logo": "/src/assets/indigo.png"
+  },
+  {
+    "id": 17,
+    "flightName": "Air India AI-313",
+    "from": "DEL",
+    "to": "JAI",
+    "price": 4000,
+    "duration": "1h 00m",
+    "departureTime": "08:00 AM",
+    "arrivalTime": "09:00 AM",
+    "logo": "/src/assets/aindia.jpg"
+  },
+  {
+    "id": 18,
+    "flightName": "SpiceJet SG-112",
+    "from": "BOM",
+    "to": "GOI",
+    "price": 4500,
+    "duration": "1h 20m",
+    "departureTime": "04:00 PM",
+    "arrivalTime": "05:20 PM",
+    "logo": "/src/assets/spicejet.png"
+  },
+  {
+    "id": 19,
+    "flightName": "GoAir G8-650",
+    "from": "BLR",
+    "to": "HYD",
+    "price": 4100,
+    "duration": "1h 05m",
+    "departureTime": "02:00 PM",
+    "arrivalTime": "03:05 PM",
+    "logo": "/src/assets/goair.svg"
+  },
+  {
+    "id": 20,
+    "flightName": "Vistara UK-777",
+    "from": "MAA",
+    "to": "DEL",
+    "price": 5300,
+    "duration": "2h 10m",
+    "departureTime": "11:00 AM",
+    "arrivalTime": "01:10 PM",
+    "logo": "/src/assets/vistara.jpg"
+  }
+]

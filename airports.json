@@ -1,0 +1,33 @@
+[
+  { "name": "Indira Gandhi International Airport", "code": "DEL" },
+  {
+    "name": "Chhatrapati Shivaji Maharaj International Airport",
+    "code": "BOM"
+  },
+  { "name": "Kempegowda International Airport", "code": "BLR" },
+  { "name": "Chennai International Airport", "code": "MAA" },
+  { "name": "Rajiv Gandhi International Airport", "code": "HYD" },
+  { "name": "Netaji Subhas Chandra Bose International Airport", "code": "CCU" },
+  { "name": "Sardar Vallabhbhai Patel International Airport", "code": "AMD" },
+  { "name": "Cochin International Airport", "code": "COK" },
+  { "name": "Goa International Airport", "code": "GOI" },
+  { "name": "Pune Airport", "code": "PNQ" },
+  { "name": "Jaipur International Airport", "code": "JAI" },
+  { "name": "Lucknow Airport", "code": "LKO" },
+  { "name": "Trivandrum International Airport", "code": "TRV" },
+  { "name": "Biju Patnaik International Airport", "code": "BBI" },
+  { "name": "Chandigarh Airport", "code": "IXC" },
+  { "name": "Devi Ahilya Bai Holkar Airport", "code": "IDR" },
+  { "name": "Vadodara Airport", "code": "BDQ" },
+  { "name": "Bhopal Airport", "code": "BHO" },
+  { "name": "Calicut International Airport", "code": "CCJ" },
+  { "name": "Srinagar Airport", "code": "SXR" },
+  { "name": "Veer Savarkar International Airport", "code": "IXZ" },
+  { "name": "Bagdogra Airport", "code": "IXB" },
+  { "name": "Birsa Munda Airport", "code": "IXR" },
+  { "name": "Gaya Airport", "code": "GAY" },
+  { "name": "Guwahati Airport", "code": "GAU" },
+  { "name": "Sri Guru Ram Dass Jee International Airport", "code": "ATQ" },
+  { "name": "Surat Airport", "code": "STV" },
+  { "name": "Dibrugarh Airport", "code": "DIB" }
+]
