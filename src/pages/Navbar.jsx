@@ -59,7 +59,7 @@ const Navbar = () => {
         <div className="z-30 flex max-h-16 items-center justify-between p-1 px-10 text-xs">
           <Link to={"/flight"}>
             <img
-              src="public\static\images\mmt_dt_top_icon.avif"
+              src="static\images\mmt_dt_top_icon.avif"
               alt="logo"
               className="h-full w-44 object-contain"
             />
@@ -103,7 +103,7 @@ const Navbar = () => {
                   onClick={onOpen}
                 >
                   <img
-                    src="public\static\images\logo.svg"
+                    src="static\images\logo.svg"
                     alt="logo"
                     className="h-full w-6 fill-white"
                   />
@@ -118,7 +118,7 @@ const Navbar = () => {
             <div>
               <button className="flex h-full items-center gap-1 rounded-md bg-white bg-opacity-10 px-4 py-3 font-bold shadow-lg">
                 <img
-                  src="public\static\images\india.svg"
+                  src="static\images\india.svg"
                   alt="india"
                   className="w-5"
                 />

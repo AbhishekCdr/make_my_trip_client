@@ -14,7 +14,7 @@ const FlightList = () => {
   const [priceRange, setPriceRange] = useState(""); // State for selected price range
 
   useEffect(() => {
-    fetch("/airports.json")
+    fetch("./airports.json")
       .then((response) => response.json())
       .then((data) => {
         setAirports(data);
@@ -23,7 +23,7 @@ const FlightList = () => {
   }, []);
 
   useEffect(() => {
-    fetch("/flights.json")
+    fetch("./flights.json")
       .then((response) => response.json())
       .then((data) => {
         setFlights(data);
