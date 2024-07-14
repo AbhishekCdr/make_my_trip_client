@@ -8,10 +8,10 @@ import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 const HomePage = () => {
   const navigate = useNavigate();
   const images = [
-    "public/static/images/bg1.jpg",
-    "public/static/images/bg2.jpg",
-    "public/static/images/bg3.jpg",
-    "public/static/images/bg4.jpg",
+    "static/images/bg1.jpg",
+    "static/images/bg2.jpg",
+    "static/images/bg3.jpg",
+    "static/images/bg4.jpg",
   ];
   const [randomImage, setRandomImage] = useState("");
   const [formData, setFormData] = useState([]);
