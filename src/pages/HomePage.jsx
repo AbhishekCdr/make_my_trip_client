@@ -56,6 +56,7 @@ const HomePage = () => {
           {formData.map((hotel) => (
             <Link
               to={`/listing/${hotel._id}`}
+              key={hotel._id}
               className="transition-all duration-200 ease-in hover:scale-105"
             >
               <HomeCard key={hotel.id} hotel={hotel} />

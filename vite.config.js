@@ -6,10 +6,16 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:3000",
-        secure: false,
+        target: "https://make-my-trip-api.vercel.app",
+        changeOrigin: true,
+        secure: true,
       },
     },
   },
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      external: ["core-js-pure"],
+    },
+  },
 });

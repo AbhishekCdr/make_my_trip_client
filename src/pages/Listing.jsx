@@ -120,7 +120,7 @@ export default function Listing() {
                     <div className="flex flex-col">
                       <span className="flex gap-2 text-sm font-bold">
                         <s>₹ {listing.regularPrice}</s>
-                        <span className="text-sm">Per Night</span>
+                        <span className="text-xs">Per Night:</span>
                       </span>
                       <span className="text-4xl font-bold">
                         ₹ {listing.discountPrice}

@@ -10,9 +10,9 @@ const HomeCard = ({ hotel }) => {
       <img src={imageUrls[0]} alt={name} className="h-48 w-full object-cover" />
       <div className="p-4">
         <h3 className="text-lg font-semibold">{name}</h3>
-        <p>
-          <Rating name="read-only" value={rating} readOnly />
-        </p>
+
+        <Rating name="read-only" value={rating} readOnly />
+
         <p className="mt-2 flex justify-between gap-1 text-xl">
           <div className="flex gap-1 font-bold">
             ₹ {discountPrice === 0 ? regularPrice : discountPrice}
