@@ -7,6 +7,7 @@ const Flight = () => {
   const [returnDate, setReturnDate] = useState("");
   const [travellers, setTravellers] = useState(1);
   const [classType, setClassType] = useState("Economy/Premium Economy");
+  const [selectedAirport, setSelectedAirport] = useState("");
 
   useEffect(() => {
     // Fetch the JSON data
@@ -32,7 +33,7 @@ const Flight = () => {
                   From
                 </label>
                 <select
-                  className="w-full border-b text-lg font-bold focus:outline-none"
+                  className="w-full border-b p-5 text-xl font-bold focus:outline-none"
                   onChange={(e) => setSelectedAirport(e.target.value)}
                 >
                   {airports.map((airport) => (
@@ -50,7 +51,7 @@ const Flight = () => {
                   To
                 </label>
                 <select
-                  className="w-full border-b text-lg font-bold focus:outline-none"
+                  className="w-full border-b p-5 text-xl font-bold focus:outline-none"
                   onChange={(e) => setSelectedAirport(e.target.value)}
                 >
                   {airports.map((airport) => (

@@ -1,12 +1,7 @@
 import React from "react";
 import { MdOutlineFlight } from "react-icons/md";
 import { FaHotel } from "react-icons/fa6";
-import { HiHome } from "react-icons/hi";
-import { FaUmbrellaBeach } from "react-icons/fa";
-import { BiSolidTrain } from "react-icons/bi";
-import { FaBus } from "react-icons/fa";
-import { FaCarSide } from "react-icons/fa6";
-import { CiCreditCard1 } from "react-icons/ci";
+
 import { NavLink, Outlet } from "react-router-dom";
 
 const Home = () => {

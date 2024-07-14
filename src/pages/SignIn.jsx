@@ -11,6 +11,11 @@ const SignIn = (props) => {
   const [formData, setFormData] = useState({});
   const [err, setErr] = useState(null);
   const { loading, error } = useSelector((state) => state.user);
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
 
   const dispatch = useDispatch();
 
@@ -33,6 +38,13 @@ const SignIn = (props) => {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
+      if (isChecked) {
+        if (data.username !== "admin") {
+          setErr("You are not admin");
+          dispatch(signInFailure("User not found"));
+          return;
+        }
+      }
       if (data.success === false) {
         dispatch(signInFailure(data.message));
         setErr(data.message);
@@ -47,7 +59,7 @@ const SignIn = (props) => {
   }
 
   return (
-    <div className="flex w-full flex-col items-center gap-8 p-4 text-center">
+    <div className="flex w-full flex-col items-center gap-4 p-4 text-center">
       <h1 className="text-2xl font-bold">Sign In</h1>
       <form className="flex w-full flex-col gap-3" onSubmit={handleSubmit}>
         <input
@@ -66,11 +78,27 @@ const SignIn = (props) => {
         />
         <button
           disabled={loading}
-          className="rounded-lg bg-gradient-to-r from-blue-400 to-blue-600 p-3 uppercase text-white hover:opacity-95 disabled:opacity-80"
+          className={
+            isChecked
+              ? "rounded-lg bg-gradient-to-r from-red-400 to-red-600 p-3 uppercase text-white transition-all duration-200 ease-in-out hover:opacity-95 disabled:opacity-80"
+              : "rounded-lg bg-gradient-to-r from-blue-400 to-blue-600 p-3 uppercase text-white transition-all duration-200 ease-in-out hover:opacity-95 disabled:opacity-80"
+          }
         >
           {loading ? "Loading..." : "Sign In"}
         </button>
       </form>
+      <div className="flex items-center gap-2 self-start">
+        <input
+          type="checkbox"
+          id="checkbox"
+          checked={isChecked}
+          onChange={handleCheckboxChange}
+          className="form-checkbox h-5 w-5 text-blue-600"
+        />
+        <label htmlFor="checkbox" className="">
+          admin
+        </label>
+      </div>
       {err && <p className="text-red-500">{err}</p>}
       <div className="flex gap-2">
         <p>Do not have account ? </p>

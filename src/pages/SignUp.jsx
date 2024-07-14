@@ -34,7 +34,6 @@ const SignUp = (props) => {
       }
       setLoading(false);
       setError(data);
-      console.log(data);
     } catch (error) {
       setLoading(false);
       setError(error.message);

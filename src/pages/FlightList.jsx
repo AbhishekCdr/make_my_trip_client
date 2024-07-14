@@ -9,8 +9,9 @@ const FlightList = () => {
   const [returnDate, setReturnDate] = useState("");
   const [travellers, setTravellers] = useState(1);
   const [classType, setClassType] = useState("Economy/Premium Economy");
+  const [flights, setFlights] = useState([]);
   const [filteredFlights, setFilteredFlights] = useState([]);
-  const [priceRange, setPriceRange] = useState({ min: 0, max: 10000 });
+  const [priceRange, setPriceRange] = useState(""); // State for selected price range
 
   useEffect(() => {
     fetch("/airports.json")
@@ -25,47 +26,54 @@ const FlightList = () => {
     fetch("/flights.json")
       .then((response) => response.json())
       .then((data) => {
+        setFlights(data);
         setFilteredFlights(data); // Initialize filtered flights with all flights
       })
       .catch((error) => console.error("Error fetching flight data:", error));
   }, []);
 
-  const handlePriceChange = (event) => {
-    const value = event.target.value;
-    const [min, max] = value.split("-").map(Number);
-    setPriceRange({ min, max });
-  };
+  useEffect(() => {
+    if (priceRange === "") {
+      setFilteredFlights(flights);
+    } else {
+      const [min, max] = priceRange.split("-").map(Number);
+      setFilteredFlights(
+        flights.filter((flight) => {
+          const price = flight.price; // Adjust according to your data structure
+          return (isNaN(min) || price >= min) && (isNaN(max) || price <= max);
+        }),
+      );
+    }
+  }, [priceRange, flights]);
 
   return (
-    <div className="flex min-h-screen p-5">
+    <div className="flex min-h-screen bg-gradient-to-b from-slate-900 to-cyan-300 p-20">
       {/* Sidebar */}
-      <div className="flex w-64 flex-col">
-        <Link to={"/"}>
-          <span className="flex cursor-pointer items-center gap-2 text-sm font-semibold text-blue-600 transition-colors duration-300 ease-in-out hover:text-green-600">
-            Go to Home
-            <FaHome />
-          </span>
-        </Link>
+      <div className="flex w-64 flex-col text-white">
         <div className="border-b border-gray-700 p-4 text-xl font-bold">
           Filter
         </div>
-        <div className="flex-1 space-y-2 p-4">
-          <div>
-            {/* Price Filter Selector */}
-            <label htmlFor="priceFilter">Price Range:</label>
-            <select id="priceFilter" onChange={handlePriceChange}>
+        <div className="flex-1 gap-1 space-y-2 p-4">
+          <label>
+            Price Range:
+            <select
+              value={priceRange}
+              onChange={(e) => setPriceRange(e.target.value)}
+              className="text-black"
+            >
+              <option value="">All</option>
               <option value="0-1000">Below ₹1000</option>
               <option value="1000-3000">₹1000 - ₹3000</option>
               <option value="3000-5000">₹3000 - ₹5000</option>
               <option value="5000-10000">₹5000 - ₹10000</option>
               <option value="10000-">Above ₹10000</option>
             </select>
-          </div>
+          </label>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 bg-white p-4">
+      <div className="flex-1 rounded-2xl bg-white p-4">
         <div className="mb-4 border-b pb-4 text-2xl font-bold">
           <div className="h-3/4 w-full self-end">
             <div className="flex space-x-4 rounded-lg p-4 shadow">
@@ -156,7 +164,7 @@ const FlightList = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-2 rounded bg-gray-100 p-4">
+        <div className="flex flex-col gap-2 rounded-lg bg-gray-100 p-4">
           {filteredFlights.map((flight) => (
             <FlightCard key={flight.id} flight={flight} />
           ))}

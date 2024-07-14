@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { FaHome } from "react-icons/fa";
 import {
   getDownloadURL,
   getStorage,
@@ -40,7 +39,6 @@ export default function UpdateListing() {
       const res = await fetch(`/api/listing/get/${listingId}`);
       const data = await res.json();
       if (data.success === false) {
-        console.log(data.message);
         return;
       }
       setFormData(data);
@@ -171,15 +169,8 @@ export default function UpdateListing() {
     }
   };
   return (
-    <main className="mx-auto max-w-4xl p-3">
-      <span
-        className="flex cursor-pointer items-center gap-2 text-sm font-semibold text-blue-600 transition-colors duration-300 ease-in-out hover:text-green-600"
-        onClick={() => navigate("/")}
-      >
-        Go to Home
-        <FaHome />
-      </span>
-      <h1 className="my-7 text-center text-3xl font-semibold">
+    <main className="mx-auto flex min-h-svh flex-col gap-3 bg-gradient-to-b from-slate-900 to-red-500 px-20 pt-20">
+      <h1 className="my-7 text-center text-3xl font-semibold text-white">
         Update a Listing
       </h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4 sm:flex-row">

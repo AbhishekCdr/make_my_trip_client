@@ -146,14 +146,7 @@ export default function CreateListing() {
     }
   };
   return (
-    <main className="mx-auto max-w-4xl p-3">
-      <span
-        className="flex cursor-pointer items-center gap-2 text-sm font-semibold text-blue-600 transition-colors duration-300 ease-in-out hover:text-green-600"
-        onClick={() => navigate("/")}
-      >
-        Go to Home
-        <FaHome />
-      </span>
+    <main className="mx-auto flex min-h-screen flex-col gap-4 bg-gradient-to-b from-slate-900 to-indigo-500 px-40 py-20 text-white">
       <h1 className="my-7 text-center text-3xl font-semibold">
         Create a Listing
       </h1>
@@ -162,7 +155,7 @@ export default function CreateListing() {
           <input
             type="text"
             placeholder="Name"
-            className="rounded-lg border p-3"
+            className="rounded-lg border p-3 text-black"
             id="name"
             maxLength="62"
             minLength="10"
@@ -173,7 +166,7 @@ export default function CreateListing() {
           <textarea
             type="text"
             placeholder="Description"
-            className="rounded-lg border p-3"
+            className="rounded-lg border p-3 text-black"
             id="description"
             required
             onChange={handleChange}
@@ -185,7 +178,7 @@ export default function CreateListing() {
               <input
                 type="checkbox"
                 id="coupleFriendly"
-                className="w-5"
+                className="w-5 text-black"
                 onChange={handleChange}
                 checked={formData.coupleFriendly}
               />
@@ -231,7 +224,7 @@ export default function CreateListing() {
                 min="1"
                 max="5"
                 required
-                className="rounded-lg border border-gray-300 p-3"
+                className="rounded-lg border border-gray-300 p-3 text-black"
                 onChange={handleChange}
                 value={formData.rating}
               />
@@ -244,7 +237,7 @@ export default function CreateListing() {
                 min="50"
                 max="10000000"
                 required
-                className="rounded-lg border border-gray-300 p-3"
+                className="rounded-lg border border-gray-300 p-3 text-black"
                 onChange={handleChange}
                 value={formData.regularPrice}
               />
@@ -263,7 +256,7 @@ export default function CreateListing() {
                   min="0"
                   max="10000000"
                   required
-                  className="rounded-lg border border-gray-300 p-3"
+                  className="rounded-lg border border-gray-300 p-3 text-black"
                   onChange={handleChange}
                   value={formData.discountPrice}
                 />
@@ -328,7 +321,7 @@ export default function CreateListing() {
             ))}
           <button
             disabled={loading || uploading}
-            className="rounded-lg bg-slate-700 p-3 uppercase text-white hover:opacity-95 disabled:opacity-80"
+            className="rounded-lg bg-gradient-to-r from-slate-500 to-slate-800 p-3 uppercase text-white hover:opacity-95 disabled:opacity-80"
           >
             {loading ? "Creating..." : "Create listing"}
           </button>

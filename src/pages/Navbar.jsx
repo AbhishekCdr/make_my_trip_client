@@ -28,6 +28,23 @@ const Navbar = () => {
     isLogin((old) => !old);
   }
 
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 100) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Modal open={open} onClose={onClose}>
@@ -38,29 +55,31 @@ const Navbar = () => {
         )}
       </Modal>
 
-      <div className="absolute top-0 w-full text-white">
-        <div className="flex max-h-16 items-center justify-between p-1 px-10 text-xs">
-          <Link to={"/"}>
+      <div className="fixed left-0 right-0 top-0 z-40 w-full text-white">
+        <div className="z-30 flex max-h-16 items-center justify-between p-1 px-10 text-xs">
+          <Link to={"/flight"}>
             <img
               src="src\assets\mmt_dt_top_icon.avif"
               alt="logo"
               className="h-full w-44 object-contain"
             />
           </Link>
-          <Link
-            to={
-              currentUser !== null &&
-              currentUser !== "User not found" &&
-              currentUser !== "Wrong Credentials !"
-                ? "/create-listing"
-                : "/admin"
-            }
-          >
-            <button className="flex h-full items-center gap-1 rounded-md bg-white bg-opacity-10 px-4 py-3 font-bold shadow-lg">
-              <FcDepartment className="size-5" />
-              <span className="font-bold">List Your Property</span>
-            </button>
-          </Link>
+          {username === "admin" && (
+            <Link
+              to={
+                currentUser !== null &&
+                currentUser !== "User not found" &&
+                currentUser !== "Wrong Credentials !"
+                  ? "/create-listing"
+                  : "/admin"
+              }
+            >
+              <button className="flex h-full items-center gap-1 rounded-md bg-white bg-opacity-10 px-4 py-3 font-bold shadow-lg">
+                <FcDepartment className="size-5" />
+                <span className="font-bold">List Property</span>
+              </button>
+            </Link>
+          )}
 
           <div className="flex gap-1">
             <div className="h-full">
@@ -93,6 +112,9 @@ const Navbar = () => {
                 </button>
               )}
             </div>
+            <div
+              className={`fixed left-0 right-0 top-0 -z-20 min-h-16 transform bg-gradient-to-b from-slate-900 to-slate-800 p-4 text-white transition-transform ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
+            />
             <div>
               <button className="flex h-full items-center gap-1 rounded-md bg-white bg-opacity-10 px-4 py-3 font-bold shadow-lg">
                 <img src="src\assets\india.svg" alt="india" className="w-5" />

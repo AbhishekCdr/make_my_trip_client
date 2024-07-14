@@ -20,11 +20,11 @@ const RatingComponent = ({ rating }) => {
   };
 
   return (
-    <div className="flex items-center gap-2 rounded p-4 text-center">
-      <div className="flex items-center space-x-2 rounded-xl bg-blue-700 px-8 py-3 text-3xl font-bold text-white">
+    <div className="flex items-center gap-3 rounded p-4 text-center">
+      <div className="flex space-x-2 rounded-xl bg-blue-700 px-8 py-3 text-3xl font-bold text-white">
         {rating}
       </div>
-      <p className="mt-2 text-lg font-semibold text-blue-700">
+      <p className="mt-2 text-2xl font-semibold text-white">
         {getRatingWord(rating)}
       </p>
     </div>
