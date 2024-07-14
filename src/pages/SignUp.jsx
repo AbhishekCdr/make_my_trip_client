@@ -5,7 +5,7 @@ const SignUp = (props) => {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-
+  const api = "https://make-my-trip-api.vercel.app";
   function handleChange(e) {
     setFormData({
       ...formData,
@@ -17,7 +17,7 @@ const SignUp = (props) => {
     try {
       e.preventDefault();
       setLoading(true);
-      const res = await fetch("/api/auth/signup", {
+      const res = await fetch(api + "/api/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

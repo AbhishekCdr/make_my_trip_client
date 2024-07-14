@@ -14,10 +14,11 @@ const HotelList = () => {
   const [coupleFriendly, setCoupleFriendly] = useState(false);
   const [parking, setParking] = useState(false);
   const [offer, setOffers] = useState(false);
+  const api = "https://make-my-trip-api.vercel.app";
 
   useEffect(() => {
     const fetchListing = async () => {
-      const res = await fetch(`/api/listing/get`);
+      const res = await fetch(api + `/api/listing/get`);
       const data = await res.json();
       if (data.success === false) {
         console.log(data.message);

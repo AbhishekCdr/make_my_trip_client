@@ -18,6 +18,7 @@ const SignIn = (props) => {
   };
 
   const dispatch = useDispatch();
+  const api = "https://make-my-trip-api.vercel.app";
 
   function handleChange(e) {
     setFormData({
@@ -30,7 +31,7 @@ const SignIn = (props) => {
     try {
       e.preventDefault();
       dispatch(signInStart());
-      const res = await fetch("/api/auth/signin", {
+      const res = await fetch(api + "/api/auth/signin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

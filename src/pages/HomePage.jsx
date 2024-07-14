@@ -15,6 +15,7 @@ const HomePage = () => {
   ];
   const [randomImage, setRandomImage] = useState("");
   const [formData, setFormData] = useState([]);
+  const api = "https://make-my-trip-api.vercel.app";
 
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * images.length);
@@ -27,7 +28,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const fetchListing = async () => {
-      const res = await fetch(`/api/listing/get`);
+      const res = await fetch(api + `/api/listing/get`);
       const data = await res.json();
       if (data.success === false) {
         console.log(data.message);

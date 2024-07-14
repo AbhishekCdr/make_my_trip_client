@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { FaHome } from "react-icons/fa";
 import {
   getDownloadURL,
   getStorage,
@@ -30,6 +29,8 @@ export default function CreateListing() {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const api = "https://make-my-trip-api.vercel.app";
+
   const handleImageSubmit = (e) => {
     if (files.length > 0 && files.length + formData.imageUrls.length < 7) {
       setUploading(true);
@@ -124,7 +125,7 @@ export default function CreateListing() {
         return setError("Discount price must be lower than regular price");
       setLoading(true);
       setError(false);
-      const res = await fetch("/api/listing/create", {
+      const res = await fetch(api + "/api/listing/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

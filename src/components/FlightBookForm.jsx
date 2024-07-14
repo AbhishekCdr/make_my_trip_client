@@ -14,6 +14,8 @@ const FlightBookingForm = ({ flight }) => {
     dateOfBooking: "",
   });
 
+  const api = "https://make-my-trip-api.vercel.app";
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -37,7 +39,7 @@ const FlightBookingForm = ({ flight }) => {
     };
 
     try {
-      const response = await fetch("/api/booking/flight", {
+      const response = await fetch(api + "/api/booking/flight", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

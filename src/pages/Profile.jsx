@@ -29,6 +29,7 @@ const Profile = () => {
   const [flightBookings, setFlightBookings] = useState([]);
   const [hotelList, setHotelList] = useState([]);
   const [flightList, setFlightList] = useState([]);
+  const api = "https://make-my-trip-api.vercel.app";
 
   function handleChange(e) {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -38,7 +39,7 @@ const Profile = () => {
     e.preventDefault();
     try {
       dispatch(updateUserStart());
-      const res = await fetch(`/api/user/update/${currentUser._id}`, {
+      const res = await fetch(api + `/api/user/update/${currentUser._id}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -60,7 +61,7 @@ const Profile = () => {
   async function handleDeleteUser() {
     try {
       dispatch(deleteUserStart());
-      const res = await fetch(`/api/user/delete/${currentUser._id}`, {
+      const res = await fetch(api + `/api/user/delete/${currentUser._id}`, {
         method: "DELETE",
       });
       const data = await res.json();
@@ -78,7 +79,7 @@ const Profile = () => {
   async function handleSignOut() {
     try {
       dispatch(signOutUserStart());
-      const res = await fetch("/api/auth/signout");
+      const res = await fetch(api + "/api/auth/signout");
       const data = await res.json();
       if (data.success === false) {
         dispatch(signOutUserFailure(data.message));
@@ -96,7 +97,7 @@ const Profile = () => {
       setShowListingsError(false);
       setHotelList([]);
       setFlightList([]);
-      const res = await fetch(`/api/user/listings/${currentUser._id}`);
+      const res = await fetch(api + `/api/user/listings/${currentUser._id}`);
       const data = await res.json();
       if (data.success === false) {
         setShowListingsError(true);
@@ -110,7 +111,7 @@ const Profile = () => {
 
   async function handleListingDelete(listingId) {
     try {
-      const res = await fetch(`/api/listing/delete/${listingId}`, {
+      const res = await fetch(api + `/api/listing/delete/${listingId}`, {
         method: "DELETE",
       });
       const data = await res.json();
@@ -130,7 +131,7 @@ const Profile = () => {
   async function handleShowHotel(username) {
     try {
       setShowListingsError(false);
-      const res = await fetch(`/api/booking/hotel/get`);
+      const res = await fetch(api + `/api/booking/hotel/get`);
       const data = await res.json();
 
       if (!res.ok) {
@@ -151,7 +152,7 @@ const Profile = () => {
   async function handleShowFlight(username) {
     try {
       setShowListingsError(false);
-      const res = await fetch(`/api/booking/flight/get`);
+      const res = await fetch(api + `/api/booking/flight/get`);
       const data = await res.json();
 
       if (!res.ok) {
@@ -174,7 +175,7 @@ const Profile = () => {
       setShowListingsError(false);
       setUserListings([]);
       setHotelList([]);
-      const res = await fetch(`/api/booking/flight/get`);
+      const res = await fetch(api + `/api/booking/flight/get`);
       const data = await res.json();
 
       if (!res.ok) {
@@ -193,7 +194,7 @@ const Profile = () => {
       setShowListingsError(false);
       setFlightList([]);
       setUserListings([]);
-      const res = await fetch(`/api/booking/hotel/get`);
+      const res = await fetch(api + `/api/booking/hotel/get`);
       const data = await res.json();
 
       if (!res.ok) {
