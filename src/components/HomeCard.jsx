@@ -20,7 +20,7 @@ const HomeCard = ({ hotel }) => {
           </div>
           {discountPrice !== 0 ? (
             <span className="size-8 text-sm">
-              <img src="src\assets\offer.png" alt="" />
+              <img src="static\images\offer.png" alt="" />
             </span>
           ) : (
             ""
