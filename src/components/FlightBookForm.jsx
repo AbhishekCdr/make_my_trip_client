@@ -7,8 +7,8 @@ const FlightBookingForm = ({ flight }) => {
     (state) => state.user.currentUser || {},
   );
   const [formData, setFormData] = useState({
-    username: username,
-    email: "",
+    userName: username,
+    Email: "",
     flightName: flightName,
     price: price,
     dateOfBooking: "",
@@ -77,7 +77,7 @@ const FlightBookingForm = ({ flight }) => {
         <input
           type="email"
           name="email"
-          value={formData.email}
+          value={formData.Email}
           onChange={handleChange}
           className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2"
         />
