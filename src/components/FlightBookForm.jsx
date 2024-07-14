@@ -65,7 +65,7 @@ const FlightBookingForm = ({ flight }) => {
         <label className="block text-gray-700">User Name</label>
         <input
           type="text"
-          name="username"
+          name="userName"
           value={username}
           disabled
           onChange={handleChange}
@@ -76,7 +76,7 @@ const FlightBookingForm = ({ flight }) => {
         <label className="block text-gray-700">Email</label>
         <input
           type="email"
-          name="email"
+          name="Email"
           value={formData.Email}
           onChange={handleChange}
           className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2"

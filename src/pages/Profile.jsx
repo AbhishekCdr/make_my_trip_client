@@ -170,7 +170,7 @@ const Profile = () => {
     }
   }
 
-  async function handleShowFlightAll(username) {
+  async function handleShowFlightAll() {
     try {
       setShowListingsError(false);
       setUserListings([]);
@@ -189,7 +189,7 @@ const Profile = () => {
     }
   }
 
-  async function handleShowHotelAll(username) {
+  async function handleShowHotelAll() {
     try {
       setShowListingsError(false);
       setFlightList([]);
