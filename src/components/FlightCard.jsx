@@ -2,19 +2,22 @@ import React, { useState } from "react";
 import Modal from "./Modal/Modal";
 import { useSelector } from "react-redux";
 import FlightBookingForm from "./FlightBookForm";
+import { useNavigate } from "react-router-dom";
 
 const FlightCard = ({ flight }) => {
   const [open, isOpen] = useState(false);
   const { currentUser } = useSelector((state) => state.user);
+  const navigate = useNavigate();
   function onOpen() {
     if (
-      currentUser === null &&
-      currentUser === "User not found" &&
-      currentUser === "Wrong Credentials !"
+      currentUser !== null &&
+      currentUser !== "User not found" &&
+      currentUser !== "Wrong Credentials !"
     ) {
+      isOpen((old) => !old);
+    } else {
       navigate("/flight");
     }
-    isOpen((old) => !old);
   }
 
   function onClose() {
@@ -56,7 +59,11 @@ const FlightCard = ({ flight }) => {
             className="rounded-lg bg-blue-500 px-4 py-2 text-white"
             onClick={onOpen}
           >
-            BOOK NOW
+            {currentUser !== null &&
+            currentUser !== "User not found" &&
+            currentUser !== "Wrong Credentials !"
+              ? "BOOK NOW"
+              : "Login to Book"}
           </button>
         </div>
       </div>

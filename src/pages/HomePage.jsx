@@ -15,6 +15,7 @@ const HomePage = () => {
   ];
   const [randomImage, setRandomImage] = useState("");
   const [formData, setFormData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const api = "https://make-my-trip-api.vercel.app";
 
   useEffect(() => {
@@ -28,12 +29,15 @@ const HomePage = () => {
 
   useEffect(() => {
     const fetchListing = async () => {
+      setLoading(true);
       const res = await fetch(api + `/api/listing/get`);
       const data = await res.json();
       if (data.success === false) {
+        setLoading(false);
         console.log(data.message);
         return;
       }
+      setLoading(false);
       setFormData(data);
     };
 
@@ -54,6 +58,9 @@ const HomePage = () => {
 
       <div className="bg-[#f2f2f2] px-20 pt-10">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {loading && (
+            <p className="my-7 self-center text-center text-2xl">Loading...</p>
+          )}
           {formData.map((hotel) => (
             <Link
               to={`/listing/${hotel._id}`}
