@@ -161,7 +161,7 @@ export default function Listing() {
             />
           </div>
           {copied && (
-            <p className="fixed right-[5%] top-[23%] z-10 rounded-md bg-slate-100 p-2">
+            <p className="fixed right-[5%] top-[23%] z-10 rounded-md bg-slate-100 p-2 text-black">
               Link copied!
             </p>
           )}
